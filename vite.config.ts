@@ -4,6 +4,7 @@ import react from '@vitejs/plugin-react-swc'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  base: '',
   server: {
     host: true, // irá ouvir em todas as portas, inclusive o IP 'público'
     proxy: { // exemplo de proxy
