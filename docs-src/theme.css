@@ -1,0 +1,140 @@
+:root {
+  --bg-01: #dfdfdf;
+  --bg-02: #fff;
+  --fg-01: #444;
+  --fg-02: #222;
+  color: #222;
+  --btn-bg: var(--bg-01);
+  --hr-line: #bebebe;
+  --hr-shadow: #efefef;
+  --input-bg: #fff;
+  --input-border: none;
+  --input-shadow: 0px 1px 1px #4444 inset,
+                  0px 1px 1px #9992
+                  ;
+  --box-shadow: #dfdfdf;
+}
+/* #app.light {} */
+#app.dark {
+  --bg-01: #181818;
+  --bg-02: #1f1f1f;
+  --fg-01: #cccccc;
+  --fg-02: #868686;
+  color: #fff;
+  --btn-bg: var(--bg-02);
+  --hr-line: #505050;
+  --hr-shadow: #202020;
+  --input-bg: #cecece;
+  --input-border: none;
+  --input-shadow: 0px -1px 1px #fffc inset
+                  ;
+  --box-shadow: #515151;
+}
+
+
+/* ================================ */
+/* ====  General  ================= */
+.container {
+  padding: 10px 20px;
+}
+button {
+  border: 1px solid var(--fg-01);
+  border-radius: 6px;
+  padding: 2px 8px;
+  text-align: center;
+  background-color: var(--btn-bg);
+  color: var(--fg-01);
+}
+button:hover {
+  box-shadow: 0 0 10px #fff4 inset;
+}
+button:active {
+  transform: translateY(1px);
+}
+.buttonBox button {
+  border-right: none;
+  border-radius: 0px;
+}
+.buttonBox button:first-of-type {
+  border-radius: 6px 0px 0px 6px;
+}
+.buttonBox button:last-of-type {
+  border-right: 1px solid var(--fg-01);
+  border-radius: 0px 6px 6px 0px;
+}
+
+input, textarea {
+  background: var(--input-bg);
+  border: var(--input-border);
+  box-shadow: var(--input-shadow);
+  padding: 4px 6px;
+  outline: none;
+}
+hr {
+  border: none;
+  border-top: 1px solid var(--hr-line);
+  border-bottom: 1px solid var(--hr-shadow);
+}
+
+
+/* ================================ */
+/* ====  General  ================= */
+.mainTitle {
+  box-shadow: 
+    3px 2px 0px inset var(--bg-01),
+    -3px 2px 0px inset var(--bg-01),
+    0px 0px 1px inset var(--fg-01)
+    ;
+  background: var(--bg-01);
+}
+
+/* ================================ */
+/* ====  Left Area  =============== */
+.panelTitle {
+  font-size: 0.8rem;
+}
+
+
+/* ================================ */
+/* ====  Main Area  =============== */
+.mainArea > * {
+  /* box-shadow: 0px 0px 1px inset var(--fg-01); */
+  background: var(--bg-02);
+}
+.mainArea > *:first-child {
+  max-width: 300px;
+  box-shadow: 
+    2px 3px 0px inset var(--bg-01),
+    2px -3px 0px inset var(--bg-01),
+    0px 0px 1px inset var(--fg-01)
+    ;
+  background: var(--bg-01);
+}
+
+.mainBox {
+  border: 1px solid var(--hr-line);
+  padding: 10px;
+  min-height: 100px;
+  min-width: 100px;
+  max-height: 500px;
+  max-width: 500px;
+  position: absolute;
+}
+
+
+/* ================================ */
+/* ====  Status Bar  ============== */
+.statusBar {
+  height: 24px;
+  font-size: 12px;
+  padding: 4px 10px;
+  background: var(--bg-01);
+  box-shadow: 
+    3px -2px 0px inset var(--bg-01),
+    -3px -2px 0px inset var(--bg-01),
+    0px 0px 1px inset var(--fg-01)
+    ;
+  color: var(--fg-01);
+  font-family: 'Courier New', Courier, monospace;
+}
+

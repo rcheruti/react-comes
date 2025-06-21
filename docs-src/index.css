@@ -1,0 +1,72 @@
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+  flex: 1 1 auto;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: normal;
+}
+body > *, #root > * {
+  flex: 1 1 auto;
+}
+* {
+  box-sizing: border-box;
+}
+
+input, textarea {
+  width: 100%;
+  flex: 1 1 auto;
+}
+label {
+  font-size: 0.8rem;
+}
+
+
+/* ----------------------------------------------- */
+/* Flexbox */
+
+.f-row, .f-row-rev, .f-col, .f-col-rev {
+  display: flex;
+  justify-content: start;
+  align-items: stretch;
+}
+.f-row { flex-direction: row; }
+.f-row-rev { flex-direction: row-reverse; }
+.f-col { flex-direction: column; }
+.f-col-rev { flex-direction: column-reverse; }
+.f-wrap-rev { flex-wrap: wrap-reverse; }
+.f-row > *, .f-row-rev > *, .f-col > *, .f-col-rev > * {
+  flex: 1 1 auto;
+}
+
+.f-nogrow { flex: 0 0 auto; }
+
+.f-start { justify-content: start; }
+.f-end { justify-content: end; }
+.f-center { justify-content: center; }
+.f-between { justify-content: space-between; }
+.f-around { justify-content: space-around; }
+.f-evenly { justify-content: space-evenly; }
+
+.f-align-start { align-items: start; }
+.f-align-end { align-items: end; }
+.f-align-center { align-items: center; }
+.f-align-stretch  { align-items: stretch; }
+.f-align-baseline { align-items: baseline; }
+
+.f-content-start { align-content: start; flex-wrap: wrap; }
+.f-content-end { align-content: end; flex-wrap: wrap; }
+.f-content-center { align-content: center; flex-wrap: wrap; }
+.f-content-between { align-content: space-between; flex-wrap: wrap; }
+.f-content-around { align-content: space-around; flex-wrap: wrap; }
+.f-content-evenly { align-content: space-evenly; flex-wrap: wrap; }
+.f-content-stretch { align-content: stretch; flex-wrap: wrap; }
+
+.f-wrap { flex-wrap: wrap; }
+.f-nowrap { flex-wrap: nowrap; }
+
