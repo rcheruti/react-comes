@@ -11,7 +11,7 @@ test(`test emit and listen`, async({ expect }) => {
   const useListener = createUseListener(new EventSystem());
 
   function App() {
-    useListener.emit(ES_USE_LISTENER, 15);
+    useListener.send(ES_USE_LISTENER, 15);
     return (
       <Page />
     );
@@ -40,7 +40,7 @@ test(`test loader and loadOnce`, async({ expect }) => {
   let value = 0;
   useListener.setLoader(ES_USE_LISTENER, () => {
     value += 5;
-    useListener.emit(ES_USE_LISTENER, value);
+    useListener.send(ES_USE_LISTENER, value);
   });
 
   function App() {

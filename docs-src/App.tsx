@@ -16,9 +16,9 @@ export const App = () => {
           <div>Theme:</div>
           <div className="buttonBox">
             <button className={theme === 'light' ? 'active':''} 
-              onClick={() => useListener.emit(ES_THEME,'light')}>Light</button>
+              onClick={() => useListener.send(ES_THEME,'light')}>Light</button>
             <button className={theme === 'dark' ? 'active':''} 
-              onClick={() => useListener.emit(ES_THEME,'dark')}>Dark</button>
+              onClick={() => useListener.send(ES_THEME,'dark')}>Dark</button>
           </div>
         </div>
       </div>

@@ -4,7 +4,7 @@ import { useListener } from '../src/index'
 // ---- Theme service
 export const ES_THEME = 'ES_THEME';
 export type ES_THEME_TYPE = 'light' | 'dark';
-useListener.emit(ES_THEME, 'light'); // default value
+useListener.send(ES_THEME, 'light'); // default value
 
 // ---------------------------------------------------
 // ---- Box data
@@ -52,7 +52,7 @@ let boxData = new BoxData();
 try {
   boxData = JSON.parse(boxDataStr||'');
 } catch(ex: any) { /* nothing */ }
-useListener.emit(ES_BOX_DATA, validateBoxData(boxData));
+useListener.send(ES_BOX_DATA, validateBoxData(boxData));
 useListener.listen(ES_BOX_DATA, async(boxData: BoxData) => {
   localStorage.setItem(ES_BOX_DATA, JSON.stringify(boxData));
 });
@@ -66,7 +66,7 @@ function jobEventLoader(id: string) {
   // show some delay
   setTimeout(() => {
     counter += 5;
-    useListener.emit(ES_JOB_EVENT, counter);
+    useListener.send(ES_JOB_EVENT, counter);
   }, 1500);
 }
 useListener.setLoader(ES_JOB_EVENT, jobEventLoader);

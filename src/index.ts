@@ -33,8 +33,8 @@ export function createUseListener(es: EventSystem) {
   // ------------------------------------------------------------------------------
   // Bridge to the original implementation
 
-  /** Call {@link EventSystem.emit}. */
-  useListener.emit = es.emit.bind(es) as EventSystem['emit'];
+  /** Call {@link EventSystem.send}. */
+  useListener.send = es.send.bind(es) as EventSystem['send'];
   /** Return the last value emitted to the address "id". */
   useListener.get = es.get.bind(es) as EventSystem['get'];
   /** Call {@link EventSystem.listen}. */
@@ -47,6 +47,10 @@ export function createUseListener(es: EventSystem) {
   useListener.setLoaderCatch = es.setLoaderCatch.bind(es) as EventSystem['setLoaderCatch'];
   /** Call {@link EventSystem.load}. */
   useListener.load = es.load.bind(es) as EventSystem['load'];
+  /** Call {@link EventSystem.addInter}. */
+  useListener.addInter = es.addInter.bind(es) as EventSystem['addInter'];
+  /** Call {@link EventSystem.removeInter}. */
+  useListener.removeInter = es.removeInter.bind(es) as EventSystem['removeInter'];
 
   // ------------------------------------------------------------------------------
   // React only

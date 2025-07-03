@@ -5,7 +5,7 @@ import { BoxData, ES_BOX_DATA, validateBoxData } from "./service";
 export const LeftPanel = () => {
   const boxData = useListener<BoxData>(ES_BOX_DATA);
   function sendBoxData(args: Partial<BoxData>) {
-    useListener.emit(ES_BOX_DATA, validateBoxData(new BoxData({ ...boxData, ...args })));
+    useListener.send(ES_BOX_DATA, validateBoxData(new BoxData({ ...boxData, ...args })));
   }
 
   return (
